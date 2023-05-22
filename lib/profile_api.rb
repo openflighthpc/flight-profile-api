@@ -1,5 +1,6 @@
 require 'logger'
 require_relative 'profile_api/config'
+require_relative 'profile_api/profile_cli'
 
 module ProfileAPI
   class << self

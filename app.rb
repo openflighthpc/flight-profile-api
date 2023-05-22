@@ -2,6 +2,8 @@
 
 require 'sinatra'
 
+require_relative 'lib/profile_api'
+
 configure do
   set :bind, '0.0.0.0'
   set :dump_errors, false
