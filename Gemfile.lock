@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/bkuhlmann/xdg
+  revision: 9f3aa51e75d6aec4ec100752f5a2afdeecb4faed
+  tag: 3.0.2
+  specs:
+    xdg (3.0.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -36,6 +43,7 @@ GEM
     sinatra-namespace (1.0)
       sinatra-contrib
     tilt (2.1.0)
+    tty-config (0.6.0)
 
 PLATFORMS
   x86_64-linux
@@ -48,6 +56,8 @@ DEPENDENCIES
   puma
   sinatra
   sinatra-namespace
+  tty-config
+  xdg!
 
 BUNDLED WITH
-   2.4.1
+   2.3.26
