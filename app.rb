@@ -22,3 +22,9 @@ namespace '/ping' do
     'OK'
   end
 end
+
+post '/remove' do
+  status 204
+  ProfileAPI::ProfileCLI.remove_node(params['node'])
+  'OK'
+end

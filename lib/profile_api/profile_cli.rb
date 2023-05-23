@@ -5,7 +5,7 @@ module ProfileAPI
   class ProfileCLI
     class << self
       def remove_node(name)
-        new(*flight_profile, 'remove', name).run_local
+        new(*flight_profile, 'remove', name, '--wait', timeout: 3600).run_local
       end
 
       private
@@ -33,7 +33,6 @@ module ProfileAPI
         timeout: @timeout,
       )
       result = process.run(@cmd, @stdin, &block)
-      p result
 
       parse_result(result)
       log_command(result)
@@ -63,6 +62,7 @@ module ProfileAPI
         COMMAND: #{stringified_cmd}
         USER: #{@user}
         PID: #{result.pid}
+        TIMEOUT: #{@timeout}
         STATUS: #{result.exitstatus}
       INFO
       ProfileAPI.logger.debug <<~DEBUG
