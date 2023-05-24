@@ -5,7 +5,14 @@ module ProfileAPI
   class ProfileCLI
     class << self
       def remove_node(name)
-        new(*flight_profile, 'remove', name, '--wait', timeout: 3600).run_local
+        new(
+          *flight_profile,
+          'remove',
+          name,
+          '--wait',
+          '--remove-hunter-entry',
+          timeout: 3600
+        ).run_local
       end
 
       private
