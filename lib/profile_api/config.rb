@@ -43,6 +43,11 @@ module ProfileAPI
           30
       end
 
+      def shared_secret
+        return unless File.file? shared_secret_path
+        File.read(shared_secret_path)
+      end
+
       def shared_secret_path
         data.fetch(:shared_secret_path) ||
           'etc/shared-secret.conf'
