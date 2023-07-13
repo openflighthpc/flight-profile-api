@@ -1,10 +1,15 @@
 require 'logger'
 require 'flight/subprocess'
 
+require_relative './json_web_token'
+
 module ProfileAPI
   class ProfileCLI
     class << self
-      def remove_node(name)
+      def remove_node(token)
+        name = JsonWebtoken.decode(token)['name']
+        return unless name
+
         new(
           *flight_profile,
           'remove',
