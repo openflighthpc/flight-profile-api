@@ -29,19 +29,6 @@
 # ==============================================================================
 # command_timeout: 30
 
-# =============================================================================
-# Shared Secret Path
-# The path to the file containing the shared secret used to verify the login
-# credentials.
-#
-# Relative paths are expanded according to the "Relative path expansion" rules
-# described below.
-#
-# The environment variable flight_PROFILE_API_shared_secret_path takes
-# precedence.
-# =============================================================================
-# shared_secret_path: etc/shared-secret.conf
-
 # ==============================================================================
 # Log Path
 # The file the logger will write to. It will write to standard error if
@@ -62,3 +49,13 @@
 # The environment variable flight_PROFILE_API_log_level takes precedence.
 # =============================================================================
 # log_level: info
+#
+# =============================================================================
+# Shared Secret Path
+# The path to the file containing the shared secret used to verify the login
+# credentials.
+#
+# The environment variable flight_DESKTOP_RESTAPI_shared_secret_path takes
+# precedence.
+# =============================================================================
+# shared_secret_path: etc/shared-secret.conf

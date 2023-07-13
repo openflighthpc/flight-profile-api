@@ -8,6 +8,7 @@ gem 'tty-config'
 gem 'flight-subprocess', github: 'openflighthpc/flight-subprocess', tag: '0.1.4'
 gem 'sinatra', require: 'sinatra/base'
 gem 'sinatra-namespace'
+gem 'jwt'
 
 group :development do
   group :pry do
