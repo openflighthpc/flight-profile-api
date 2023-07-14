@@ -6,8 +6,8 @@ require_relative './json_web_token'
 module ProfileAPI
   class ProfileCLI
     class << self
-      def remove_node(token)
-        name = JsonWebtoken.decode(token)['name']
+      def remove_node(token, remove_hunter_node: false)
+        name = JsonWebToken.decode(token)['name']
         return unless name
 
         new(
@@ -15,12 +15,16 @@ module ProfileAPI
           'remove',
           name,
           '--wait',
-          '--remove-hunter-entry',
+          *hunter_param(remove_hunter_node)
           timeout: 3600
         ).run_local
       end
 
       private
+
+      def hunter_param(arg)
+        ['--remove-hunter-entry'] if arg
+      end
 
       def flight_profile
         Config.profile_command

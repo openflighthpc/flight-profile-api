@@ -25,6 +25,9 @@ end
 
 post '/remove' do
   status 204
-  ProfileAPI::ProfileCLI.remove_node(params['node'])
+  ProfileAPI::ProfileCLI.remove_node(
+    params['node'],
+    remove_hunter_node: params['remove_hunter_node']
+  )
   'OK'
 end
