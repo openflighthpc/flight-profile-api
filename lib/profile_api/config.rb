@@ -35,12 +35,13 @@ module ProfileAPI
       end
 
       def command_path
-        data.fetch(:command_path)
+        data.fetch(:command_path) ||
+          '/usr/sbin:/usr/bin:/sbin:/bin'
+
       end
 
       def command_timeout
-        data.fetch(:command_path) ||
-          30
+        data.fetch(:command_timeout) ||
       end
 
       def shared_secret
