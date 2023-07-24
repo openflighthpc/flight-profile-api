@@ -1,4 +1,13 @@
 # =============================================================================
+# Bind Address
+# Specify which pam configuration file should be used to authenticate requests.
+# It should correlate to a filename stored within /etc/pam.d
+#
+# The environment variable flight_PROFILE_API_bind_address takes precedence.
+# =============================================================================
+# bind_address: tcp://127.0.0.1:924
+#
+# =============================================================================
 # Profile Command
 #
 # The command to used to run the Flight Profile executable.
@@ -55,7 +64,7 @@
 # The path to the file containing the shared secret used to verify the login
 # credentials.
 #
-# The environment variable flight_DESKTOP_RESTAPI_shared_secret_path takes
+# The environment variable flight_PROFILE_API_shared_secret_path takes
 # precedence.
 # =============================================================================
 # shared_secret_path: etc/shared-secret.conf

@@ -29,6 +29,6 @@
 
 require_relative 'boot.rb'
 
-bind 'tcp://127.0.0.1:923'
+bind Config.bind_address
 log_requests
 tag 'profile-restapi'

@@ -35,13 +35,15 @@ module ProfileAPI
       end
 
       def command_path
-        data.fetch(:command_path) ||
+        ENV['flight_PROFILE_API_command_path'] ||
+          data.fetch(:command_path) ||
           '/usr/sbin:/usr/bin:/sbin:/bin'
-
       end
 
       def command_timeout
-        data.fetch(:command_timeout) || 60
+        ENV['flight_PROFILE_API_command_timeout'] ||
+          data.fetch(:command_timeout) ||
+          60
       end
 
       def shared_secret
@@ -50,17 +52,26 @@ module ProfileAPI
       end
 
       def shared_secret_path
-        data.fetch(:shared_secret_path) ||
+        ENV['flight_PROFILE_API_shared_secret_path'] ||
+          data.fetch(:shared_secret_path) ||
           'etc/shared-secret.conf'
+      end
+      
+      def bind_address
+        ENV['flight_PROFILE_API_bind_address'] ||
+          data.fetch(:bind_address) ||
+          'tcp://127.0.0.1:924'
       end
 
       def log_path
-        data.fetch(:log_path) ||
+        ENV['flight_PROFILE_API_log_path'] ||
+          data.fetch(:log_path) ||
           '/dev/stdout'
       end
 
       def log_level
-        data.fetch(:log_level) ||
+        ENV['flight_PROFILE_API_log_level'] ||
+          data.fetch(:log_level) ||
           'info'
       end
     end
