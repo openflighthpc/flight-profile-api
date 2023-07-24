@@ -41,7 +41,7 @@ module ProfileAPI
       end
 
       def command_timeout
-        data.fetch(:command_timeout) ||
+        data.fetch(:command_timeout) || 60
       end
 
       def shared_secret
