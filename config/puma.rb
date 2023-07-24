@@ -29,6 +29,6 @@
 
 require_relative 'boot.rb'
 
-bind Config.bind_address
+bind ProfileAPI::Config.bind_address
 log_requests
 tag 'profile-restapi'
