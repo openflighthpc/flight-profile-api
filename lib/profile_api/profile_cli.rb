@@ -15,7 +15,7 @@ module ProfileAPI
           'remove',
           name,
           '--wait',
-          *hunter_param(remove_hunter_node)
+          *hunter_param(remove_hunter_node),
           timeout: 3600
         ).run_local
       end
